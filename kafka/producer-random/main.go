@@ -22,6 +22,13 @@ func main() {
 	//get kafka writer using enviroment variables.
 	kafkaURL := os.Getenv("kafkaURL")
 	topic := os.Getenv("topic")
+
+	//set env in linux terminal
+	//export kafkaURL="172.30.254.207:9092"
+	//export topic="quickstart-events"
+
+	// kafkaURL := "172.30.254.207:9092"
+	// topic := "quickstart-events"
 	writer := newKafkaWriter(kafkaURL, topic)
 	defer writer.Close()
 
